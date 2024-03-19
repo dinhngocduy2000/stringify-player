@@ -1,4 +1,3 @@
-"use client";
 import PlaylistIcon from "@/libraries/icon/svg/playlist-icon";
 import PlusIcon from "@/libraries/icon/svg/plus-icon";
 import RightArrow from "@/libraries/icon/svg/right-arrow";
@@ -6,16 +5,12 @@ import React from "react";
 import CategoryItem from "./components/categories/category";
 import SearchIcon from "@/libraries/icon/svg/search-icon";
 import MenuIcon from "@/libraries/icon/svg/menu-icon";
-import Link from "next/link";
-import Image from "next/image";
-import { usePathname } from "next/navigation";
-import { PAGE_ENUM } from "@/libraries/enum/pages";
+import LibraryItemComponent from "./components/library-item/library-item-component";
 
 type Props = {};
 
 const LibrariesListComponent = (props: Props) => {
-  const categories: string[] = ["Playlists", "Artists", "Albumss"];
-  const pathname = usePathname();
+  const categories: string[] = ["Playlists", "Artists", "Albums"];
   return (
     <div className="bg-slight-gray  px-6 py-0 w-full max-w-full overflow-y-auto  flex-1 rounded-md">
       <div className="sticky top-0 bg-slight-gray py-[10px] pb-0 ">
@@ -49,22 +44,7 @@ const LibrariesListComponent = (props: Props) => {
       </div>
       <div className="flex flex-col ">
         {Array.from({ length: 20 }).map((item) => (
-          <Link
-            href={PAGE_ENUM.ARTIST}
-            className={
-              "flex  my-2 p-2 items-center hover:bg-[#3b3838]" +
-              (pathname === PAGE_ENUM.ARTIST ? " bg-[#3b3838]" : "")
-            }
-          >
-            <img
-              src="https://hips.hearstapps.com/hmg-prod/images/gettyimages-507888554.jpg?resize=1200:*"
-              className="h-[50px] w-[50px] rounded-[50%] mr-4 "
-            />
-            <div>
-              <p className="text-[16px]">Akon</p>
-              <p className="text-[13px] text-[#878787]">Artist</p>
-            </div>
-          </Link>
+          <LibraryItemComponent />
         ))}
       </div>
     </div>

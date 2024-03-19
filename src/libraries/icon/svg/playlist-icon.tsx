@@ -20,7 +20,7 @@ const PlaylistIcon = (props: Props) => {
           x="0"
           y="0"
           viewBox="0 0 32 32"
-          fill-rule="evenodd"
+          fillRule="evenodd"
         >
           <g>
             <path
