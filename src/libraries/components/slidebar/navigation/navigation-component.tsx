@@ -13,37 +13,31 @@ type NavigationLinks = {
 };
 const NavigationComponent = (props: Props) => {
   const pathname = usePathname();
-  console.log(pathname);
   const navigationLinks: NavigationLinks[] = [
     {
       href: PAGE_ENUM.HOME_PAGE,
-      icon: (
-        <HomeIcon
-          width="25"
-          height="25"
-          stroke="white"
-          strokeWidth={pathname === PAGE_ENUM.HOME_PAGE ? 20 : 1}
-        />
-      ),
+      icon: <HomeIcon width="25" height="25" />,
       title: "Home",
     },
     {
       href: PAGE_ENUM.SEARCH_PAGE,
-      icon: (
-        <SearchIcon
-          height="25"
-          width="25"
-          opacity={pathname === PAGE_ENUM.SEARCH_PAGE ? "1" : "0.5"}
-        />
-      ),
+      icon: <SearchIcon height="25" width="25" />,
       title: "Search",
     },
   ];
   return (
     <div className="mb-2 bg-slight-gray px-6 py-1 rounded-md">
       {navigationLinks.map((link) => (
-        <Link className={"flex my-6 items-center"} href={link.href}>
-          {link.icon}
+        <Link
+          key={link.href}
+          className={
+            "flex my-6 items-center" +
+            " navigation-links" +
+            (link.href === pathname ? " active" : "")
+          }
+          href={link.href}
+        >
+          <div className="link-icon">{link.icon}</div>
           <p
             className={`text-gray-300 ml-4 mx-auto hover:text-white hover:font-semibold ${
               pathname === link.href ? "text-white font-semibold" : ""

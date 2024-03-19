@@ -1,0 +1,13 @@
+.navigation-links{
+    .link-icon{
+        opacity: 0.5;
+    }   
+   &:hover, &.active{
+    p{
+        color:white;
+    }
+    .link-icon{
+        opacity: 1;
+    }
+   }
+}

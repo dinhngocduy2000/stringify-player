@@ -28,7 +28,7 @@ const LibrariesListComponent = (props: Props) => {
         </div>
         <div className="flex w-full my-4">
           {categories.map((category) => (
-            <CategoryItem content={category} />
+            <CategoryItem key={category} content={category} />
           ))}
         </div>
         <div className="flex w-full justify-between">

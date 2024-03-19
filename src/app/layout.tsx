@@ -5,6 +5,7 @@ import Link from "next/link";
 import SlidebarComponent from "@/libraries/components/slidebar/slidebar-component";
 import { AppRouterCacheProvider } from "@mui/material-nextjs/v13-appRouter";
 import FooterPlayerComponent from "@/libraries/components/footer-player/footer-player-component";
+import StoreProvider from "./StoreProvider";
 const inter = Inter({ subsets: ["latin"] });
 
 export const metadata: Metadata = {
@@ -18,22 +19,24 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en">
-      <body className={inter.className}>
-        <div className="h-[100vh] relative flex-col">
-          <AppRouterCacheProvider>
-            <div className="flex-col h-full">
-              <div className="flex p-4 flex-1 h-[92vh]">
-                <SlidebarComponent />
-                <div className="rounded-md bg-slight-gray w-[400px] flex-1">
-                  {children}
+    <StoreProvider>
+      <html lang="en">
+        <body className={inter.className}>
+          <div className="h-[100vh] relative flex-col">
+            <AppRouterCacheProvider>
+              <div className="flex-col h-full">
+                <div className="flex p-4 flex-1 h-[92vh]">
+                  <SlidebarComponent />
+                  <div className="rounded-md bg-slight-gray w-[400px] flex-1">
+                    {children}
+                  </div>
                 </div>
+                <FooterPlayerComponent />
               </div>
-              <FooterPlayerComponent />
-            </div>
-          </AppRouterCacheProvider>
-        </div>
-      </body>
-    </html>
+            </AppRouterCacheProvider>
+          </div>
+        </body>
+      </html>
+    </StoreProvider>
   );
 }
