@@ -7,7 +7,7 @@ type Props = {};
 
 const HeaderComponent = (props: Props) => {
   return (
-    <div className="w-100% flex justify-between ">
+    <div className=" p-5 bg-green-400 w-100% flex justify-between sticky top-0">
       <div className="flex">
         <div className="h-9 w-9 flex justify-center items-center rounded-[50%] bg-black  mr-3 hover:cursor-pointer">
           <BackIcon />

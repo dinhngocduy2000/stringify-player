@@ -2,10 +2,10 @@ import type { Metadata } from "next";
 import { Inter } from "next/font/google";
 import "./globals.css";
 import Link from "next/link";
-import SlidebarComponent from "@/libraries/components/slidebar/slidebar-component";
 import { AppRouterCacheProvider } from "@mui/material-nextjs/v13-appRouter";
 import FooterPlayerComponent from "@/libraries/components/footer-player/footer-player-component";
 import StoreProvider from "./StoreProvider";
+import SlidebarComponent from "@/libraries/components/footer-player/slidebar/slidebar-component";
 const inter = Inter({ subsets: ["latin"] });
 
 export const metadata: Metadata = {

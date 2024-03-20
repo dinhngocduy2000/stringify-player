@@ -43,9 +43,16 @@ const LibrariesListComponent = (props: Props) => {
         </div>
       </div>
       <div className="flex flex-col ">
-        {Array.from({ length: 20 }).map((item) => (
+        {/* {Array.from({ length: 20 }).map((item) => (
           <LibraryItemComponent />
-        ))}
+        ))} */}
+        <LibraryItemComponent />
+        <LibraryItemComponent />
+        <LibraryItemComponent />
+        <LibraryItemComponent />
+        <LibraryItemComponent />
+        <LibraryItemComponent />
+        <LibraryItemComponent />
       </div>
     </div>
   );
