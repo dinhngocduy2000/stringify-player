@@ -1,8 +1,12 @@
-import React from "react";
+import React, { useState } from "react";
 import { HomeAlbumsProps } from "./home-albums-prop-type";
 import AlbumItemsComponent from "./album-item/album-items-component";
 
 const HomeAlbumComponent = ({ title }: HomeAlbumsProps) => {
+  const [number, setNumber] = useState(1);
+  const updateNumber = () => {
+    setNumber(5);
+  };
   const albumList = [
     {
       title: "Daily Mix",
@@ -35,6 +39,14 @@ const HomeAlbumComponent = ({ title }: HomeAlbumsProps) => {
         "https://hips.hearstapps.com/hmg-prod/images/gettyimages-507888554.jpg?resize=1200:*",
     },
   ];
+  let str = "";
+  for (let i = 0; i < 3; i++) {
+    setTimeout(() => {
+      str += i;
+    }, 1000);
+  }
+  console.log(str);
+
   return (
     <div className="my-8">
       <div className="flex justify-between">

@@ -25,7 +25,7 @@ export default function RootLayout({
           <div className="h-[100vh] relative flex-col">
             <AppRouterCacheProvider>
               <div className="flex-col h-full">
-                <div className="flex p-4 flex-1 h-[92vh]">
+                <div className="flex p-3 flex-1 h-[92vh]">
                   <SlidebarComponent />
                   <div className="rounded-md bg-slight-gray w-[400px] flex-1">
                     {children}
